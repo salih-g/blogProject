@@ -1,4 +1,4 @@
-import './topbar.css';
+import './index.css';
 
 import React from 'react';
 
