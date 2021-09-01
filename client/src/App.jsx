@@ -1,11 +1,13 @@
 import React from 'react';
 
-function App() {
+import Topbar from './Components/Topbar';
+
+const App = () => {
 	return (
-		<div className='App'>
-			<h1>App</h1>
-		</div>
+		<>
+			<Topbar />
+		</>
 	);
-}
+};
 
 export default App;
