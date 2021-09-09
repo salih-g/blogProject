@@ -2,15 +2,13 @@ import React from 'react';
 
 import Topbar from './Components/Topbar';
 
-import Home from './Pages/Home';
-import Single from './Pages/Single';
+import Settings from './Pages/Settings';
 
 const App = () => {
 	return (
 		<>
 			<Topbar />
-			{/* <Home /> */}
-			<Single />
+			<Settings />
 		</>
 	);
 };
