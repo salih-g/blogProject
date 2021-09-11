@@ -1,1 +1,1 @@
-# This is a blog web-application project 
+# This is a blog web-application project
