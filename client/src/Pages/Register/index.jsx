@@ -1,6 +1,7 @@
 import './index.css';
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
 	return (
@@ -31,7 +32,11 @@ const Register = () => {
 				/>
 				<button className='registerButto'>Register</button>
 			</form>
-			<button className='loginButto'>Login</button>
+			<button className='loginButto'>
+				<Link to='/login' className='link'>
+					Login
+				</Link>
+			</button>
 		</div>
 	);
 };
