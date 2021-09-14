@@ -1,8 +1,11 @@
 import './index.css';
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Topbar = () => {
+	const user = false;
+
 	return (
 		<nav className='top'>
 			<div className='topLeft'>
@@ -12,19 +15,58 @@ const Topbar = () => {
 			</div>
 			<div className='topCenter'>
 				<ul className='topList'>
-					<li className='topListItem'>HOME</li>
-					<li className='topListItem'>ABOUT</li>
-					<li className='topListItem'>CONTACT</li>
-					<li className='topListItem'>WRITE</li>
-					<li className='topListItem'>LOGOUT</li>
+					<li className='topListItem'>
+						<Link to='/' className='link'>
+							Home
+						</Link>
+					</li>
+
+					<li className='topListItem'>
+						<Link to='/' className='link'>
+							About
+						</Link>
+					</li>
+					<li className='topListItem'>
+						<Link to='/' className='link'>
+							Contact
+						</Link>
+					</li>
+					<li className='topListItem'>
+						<Link to='/write' className='link'>
+							Write
+						</Link>
+					</li>
+					<li className='topListItem'>
+						<Link to='/' className='link'>
+							{user && 'Logout'}
+						</Link>
+					</li>
 				</ul>
 			</div>
 			<div className='topRight'>
-				<img
-					src='https://lh3.googleusercontent.com/ogw/ADea4I4syEyokKOll1aBNb-Q4DuZGOTkNHKM8XXV-aUZ=s83-c-mo'
-					alt='profile picture'
-					className='topImg'
-				/>
+				{user ? (
+					<img
+						src='https://lh3.googleusercontent.com/ogw/ADea4I4syEyokKOll1aBNb-Q4DuZGOTkNHKM8XXV-aUZ=s83-c-mo'
+						alt='profile picture'
+						className='topImg'
+					/>
+				) : (
+					<ul className='topList'>
+						<li className='topListItem'>
+							<Link to='/login' className='link'>
+								Login
+							</Link>
+						</li>
+						<li className='topListItem'>/</li>
+
+						<li className='topListItem'>
+							<Link to='/register' className='link'>
+								Register
+							</Link>
+						</li>
+					</ul>
+				)}
+
 				<i className='topSearchIcon fas fa-search'></i>
 			</div>
 		</nav>

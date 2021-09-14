@@ -29,9 +29,9 @@ const Register = () => {
 					type='password'
 					placeholder='Enter your password'
 				/>
-				<button className='registerButton'>Register</button>
+				<button className='registerButto'>Register</button>
 			</form>
-			<button className='loginButton'>Login</button>
+			<button className='loginButto'>Login</button>
 		</div>
 	);
 };
