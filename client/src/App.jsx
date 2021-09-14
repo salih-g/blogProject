@@ -2,13 +2,13 @@ import React from 'react';
 
 import Topbar from './Components/Topbar';
 
-import Settings from './Pages/Settings';
+import Register from './Pages/Register';
 
 const App = () => {
 	return (
 		<>
 			<Topbar />
-			<Settings />
+			<Register />
 		</>
 	);
 };
