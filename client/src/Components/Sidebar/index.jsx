@@ -1,8 +1,21 @@
 import './index.css';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
+import axios from 'axios';
 
 const Sidebar = () => {
+	const [cat, setCat] = useState([]);
+
+	useEffect(() => {
+		const getCats = async () => {
+			const res = await axios.get('http://localhost:5000/api/categories');
+			setCat(res.data);
+		};
+
+		getCats();
+	}, []);
+
 	return (
 		<section className='sidebar'>
 			<div className='sidebarItem'>
@@ -16,17 +29,18 @@ const Sidebar = () => {
 					industry.
 				</p>
 			</div>
-			<div className='sidebarItem'>
-				<span className='sidebarTitle'>CATEGORIES</span>
-				<ul className='sidebarList'>
-					<li className='sidebarListItem'>Life</li>
-					<li className='sidebarListItem'>Music</li>
-					<li className='sidebarListItem'>Stlye</li>
-					<li className='sidebarListItem'>Sport</li>
-					<li className='sidebarListItem'>Tech</li>
-					<li className='sidebarListItem'>Cinema</li>
-				</ul>
-			</div>
+			{cat.length > 0 && (
+				<div className='sidebarItem'>
+					<span className='sidebarTitle'>CATEGORIES</span>
+					<ul className='sidebarList'>
+						{cat.map((c) => (
+							<li className='sidebarListItem' key={c.name}>
+								{c.name}
+							</li>
+						))}
+					</ul>
+				</div>
+			)}
 			<div className='sidebarItem'>
 				<span className='sidebarTitle'>FOLLOW US</span>
 				<div className='sidebarSocial'>
