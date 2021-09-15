@@ -4,16 +4,12 @@ import React from 'react';
 
 import Post from '../Post';
 
-const Posts = () => {
+const Posts = ({ posts }) => {
 	return (
 		<section className='posts'>
-			<Post />
-			<Post />
-			<Post />
-			<Post />
-			<Post />
-			<Post />
-			<Post />
+			{posts.map((p) => (
+				<Post post={p} key={p._id} />
+			))}
 		</section>
 	);
 };

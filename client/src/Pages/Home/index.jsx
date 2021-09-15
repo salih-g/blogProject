@@ -8,13 +8,13 @@ import Posts from '../../Components/Posts';
 import Sidebar from '../../Components/Sidebar';
 
 const Home = () => {
-	const [post, setPost] = useState([]);
+	const [posts, setPosts] = useState([]);
 
 	useEffect(() => {
 		const fetchPosts = async () => {
 			const res = await axios.get('http://localhost:5000/api/posts');
 
-			console.log(res);
+			setPosts(res.data);
 		};
 
 		fetchPosts();
@@ -24,7 +24,7 @@ const Home = () => {
 		<>
 			<Header />
 			<div className='home'>
-				<Posts />
+				<Posts posts={posts} />
 				<Sidebar />
 			</div>
 		</>
