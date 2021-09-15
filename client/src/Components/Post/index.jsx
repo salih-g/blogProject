@@ -17,7 +17,7 @@ const Post = ({ post }) => {
 						</span>
 					))}
 				</div>
-				<Link className='link'>
+				<Link className='link' to={`/post/${post._id}`}>
 					<span className='postTitle'>{post.title}</span>
 				</Link>
 				<span className='postDate'>
