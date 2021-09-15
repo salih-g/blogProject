@@ -3,9 +3,12 @@ const app = express();
 const mongoose = require('mongoose');
 const multer = require('multer');
 
+const cors = require('cors');
+
 require('dotenv').config();
 
 app.use(express.json());
+app.use(cors());
 
 const authRoute = require('./routes/auth');
 const usersRoute = require('./routes/users');
@@ -21,14 +24,14 @@ const storage = multer.diskStorage({
 	},
 });
 const upload = multer({ storage: storage });
-app.post('/blogApi/upload', upload.single('file'), (req, res) => {
+app.post('/api/upload', upload.single('file'), (req, res) => {
 	res.status(200).json('File has been uploaded');
 });
 
-app.use('/blogApi/auth', authRoute);
-app.use('/blogApi/users', usersRoute);
-app.use('/blogApi/posts', postRoute);
-app.use('/blogApi/categories', catRoute);
+app.use('/api/auth', authRoute);
+app.use('/api/users', usersRoute);
+app.use('/api/posts', postRoute);
+app.use('/api/categories', catRoute);
 
 const PORT = process.env.PORT || 5000;
 
