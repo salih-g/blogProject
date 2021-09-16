@@ -1,10 +1,12 @@
 import './index.css';
 
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
+import { Context } from '../../Context/Context';
+
 const Topbar = () => {
-	const user = false;
+	const user = useContext(Context);
 
 	return (
 		<nav className='top'>
