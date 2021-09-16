@@ -8,14 +8,14 @@ const Login = () => {
 		<div className='login'>
 			<span className='loginTitle'> Login</span>
 			<form className='loginForm'>
-				<label for='email'>Email</label>
+				<label htmlFor='email'>Email</label>
 				<input
 					id='email'
 					className='loginInput'
 					type='email'
 					placeholder='Enter your email'
 				/>
-				<label for='password'>Password</label>
+				<label htmlFor='password'>Password</label>
 
 				<input
 					id='password'
