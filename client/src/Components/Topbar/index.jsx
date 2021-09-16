@@ -6,7 +6,11 @@ import { Link } from 'react-router-dom';
 import { Context } from '../../Context/Context';
 
 const Topbar = () => {
-	const user = useContext(Context);
+	const { user, dispatch } = useContext(Context);
+
+	const handleLogout = () => {
+		dispatch({ type: 'LOGOUT' });
+	};
 
 	return (
 		<nav className='top'>
@@ -38,17 +42,18 @@ const Topbar = () => {
 							Write
 						</Link>
 					</li>
-					<li className='topListItem'>
-						<Link to='/' className='link'>
-							{user && 'Logout'}
-						</Link>
+					<li className='topListItem' onClick={handleLogout}>
+						{user && 'Logout'}
 					</li>
 				</ul>
 			</div>
 			<div className='topRight'>
 				{user ? (
 					<img
-						src='https://lh3.googleusercontent.com/ogw/ADea4I4syEyokKOll1aBNb-Q4DuZGOTkNHKM8XXV-aUZ=s83-c-mo'
+						src={
+							user.profilePic ||
+							'https://lh3.googleusercontent.com/ogw/ADea4I4syEyokKOll1aBNb-Q4DuZGOTkNHKM8XXV-aUZ=s83-c-mo'
+						}
 						alt='profile picture'
 						className='topImg'
 					/>
