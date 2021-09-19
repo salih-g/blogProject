@@ -44,6 +44,19 @@ const SinglePost = () => {
 		}
 	};
 
+	const handleUpdate = async () => {
+		try {
+			await axios.put(`http://localhost:5000/api/posts/` + path, {
+				username: user.username,
+				title,
+				desc,
+			});
+			window.location.reload('/');
+		} catch (err) {
+			console.error(err);
+		}
+	};
+
 	return (
 		<section className='singlePost'>
 			<div className='singlePostWrapper'>
@@ -100,6 +113,11 @@ const SinglePost = () => {
 					/>
 				) : (
 					<p className='singlePostDesc'>{post.desc}</p>
+				)}
+				{updateMode && (
+					<button className='singlePostButton' onClick={handleUpdate}>
+						Update
+					</button>
 				)}
 			</div>
 		</section>

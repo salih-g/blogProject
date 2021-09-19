@@ -26,6 +26,7 @@
 
 .singlePostTitleInput {
 	color: gray;
+	text-align: center;
 	font-family: 'Lora', sans-serif;
 	font-size: 28px;
 
@@ -88,4 +89,20 @@
 
 .singlePostDescInput:focus {
 	outline: none;
+}
+
+.singlePostButton {
+	color: white;
+
+	width: 100px;
+	padding: 5px;
+	margin-top: 20px;
+
+	align-self: flex-end;
+
+	border: none;
+	border-radius: 5px;
+
+	background-color: teal;
+	cursor: pointer;
 }
