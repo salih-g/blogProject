@@ -9,7 +9,9 @@ const Post = ({ post }) => {
 	return (
 		<section className='post'>
 			{post.photo && (
-				<img className='postImg' src={PF + post.photo} alt='post image' />
+				<Link className='link' to={`/post/${post._id}`}>
+					<img className='postImg' src={PF + post.photo} alt='post image' />
+				</Link>
 			)}
 			<div className='postInfo'>
 				<div className='postCats'>
