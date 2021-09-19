@@ -33,7 +33,11 @@
 	flex-direction: column;
 }
 
-.settingsPP > img {
+.settingsChangePP {
+	margin-bottom: 20px;
+}
+
+.settingsPPimg {
 	width: 70px;
 	height: 70px;
 
@@ -74,4 +78,11 @@
 
 	color: white;
 	background-color: teal;
+}
+
+.settingsUpdated {
+	color: green;
+	text-align: center;
+
+	margin-top: 20px;
 }

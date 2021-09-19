@@ -68,7 +68,7 @@ const Write = () => {
 						type='text'
 						placeholder='Title'
 						className='writeInput'
-						autoFocus={true}
+						autoFocus
 						onChange={(e) => setTitle(e.target.value)}
 					/>
 				</div>

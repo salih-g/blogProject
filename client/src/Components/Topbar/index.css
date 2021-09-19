@@ -32,6 +32,8 @@
 
 	border-radius: 50%;
 	object-fit: contain;
+
+	cursor: pointer;
 }
 
 .topIcon {

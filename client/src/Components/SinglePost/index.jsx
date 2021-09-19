@@ -51,7 +51,7 @@ const SinglePost = () => {
 				title,
 				desc,
 			});
-			window.location.reload('/');
+			setUpdateMode(false);
 		} catch (err) {
 			console.error(err);
 		}
@@ -77,7 +77,7 @@ const SinglePost = () => {
 					/>
 				) : (
 					<h1 className='singlePostTitle'>
-						{post.title}
+						{title}
 						{post.username === user?.username && (
 							<div className='singlePostEdit'>
 								<i
@@ -112,7 +112,7 @@ const SinglePost = () => {
 						onChange={(e) => setDesc(e.target.value)}
 					/>
 				) : (
-					<p className='singlePostDesc'>{post.desc}</p>
+					<p className='singlePostDesc'>{desc}</p>
 				)}
 				{updateMode && (
 					<button className='singlePostButton' onClick={handleUpdate}>
